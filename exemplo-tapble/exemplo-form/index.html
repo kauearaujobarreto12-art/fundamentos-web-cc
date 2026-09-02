@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo formulário HTML</title>
+</head>
+
+<body>
+    <header>
+        <h3>Formulários e Inputs</h3>
+    </header>
+    <main>
+        <form id="registerForm" method="POST" label for="nome"> Nome completo: </label>
+            <input type="text" id="nome" name="nome" required />
+            <br>
+            <label for='email'>Endereço de email:</label>
+            <input type="email" id="email" name="email" />
+            <br>
+            <label for="senha">Informe a senha</label>
+            <input type="password" id="senha" name="senha" required />
+            <br>
+            <label for="mensagem">Informe sua mensagem:</label>
+            <br>
+            <textarea id="mensagem" name="mensagem" rows="4"
+            cols="30"></textarea>
+            <br>
+            <label for="evento">Selecione o evento escolhido:</label>
+            <!-- Tag de seletor, ao selecionar uma das opções o value da option é atribuido ao name do select -->
+            <!-- key: value -->
+            <!-- evento: teatro-->
+            <select id="evento" name="evento">
+                <option value="rock">Show de Rock</option>
+                <option value="modao">Show de Sertanejo</option>
+                <option value="teatro">Teatro: Comédia</option>
+            </select>
+            <br>
+            <!-- Imput checkbox -> Opção de multipla escolha: -->
+            <label for="termos">
+                <imput type="checkbox" id="termos" name="termos" required>Aceito os termos de uso
+            </label>
+            <br>
+            <!--Imput type radio - Escolha única -->
+            <label> <imput type="radio" name="pagamento" value="pix" />Pix</label>
+            <br>
+            <label> <imput type="radio" name="pagamento" value="cartao" />Cartão</label>
+            <!-- Para o type radio funcionar ambos os imputs devem compartilhar o mesmo name -->
+            <br>
+            <input type="submit" value="Cadastrar" />
+            <button type="button" onclick="">Cancelar</button>
+            
+        </form>
+    </main>
+    <footer>
+        <p> Desenvolvido por kaue</p>
+    </footer>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function (event)
+        {
+            event.preventDefault(); // impede o comportamento padrão de envio do formulário (recarregamento)
+            const nome = doccument.getElementById('nome').value;
+            alert('Olá,'+ nome+'Cadrastro enviado com sucesso');
+        })
+    </script>
+
+
+
+
+</body>
+
+</html>
